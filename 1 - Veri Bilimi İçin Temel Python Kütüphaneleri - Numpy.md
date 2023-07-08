@@ -1,4 +1,4 @@
-# # 1 - Veri Bilimi İçin Temel Python Kütüphaneleri - Numpy
+# 1 - Veri Bilimi İçin Temel Python Kütüphaneleri - Numpy
 NumPy (Numerical Python), dizilerle çalışmak için kullanılan bir Python kütüphanesidir. Doğrusal cebir, fourier dönüşümü ve matrisler alanında çalışmak için de gerekli işlevlere sahiptir. 
 Ayrıca bilimsel hesaplamaları hızlı bir şekilde yapmamızı sağlayan bir matematik kütüphanesidir. Numpy’ın temelini numpy dizileri oluşturur. Numpy dizileri
 python listelerine benzer fakat hız ve işlevsellik açısından python listelerinden daha kullanışlıdır. Python listelerinden farklı olarak Numpy dizileri homojen yapıda 
