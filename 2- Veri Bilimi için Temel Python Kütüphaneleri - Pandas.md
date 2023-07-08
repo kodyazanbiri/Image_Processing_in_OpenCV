@@ -182,4 +182,46 @@ Output:
 f    5
 dtype: int64
 ```
+### - DataFrame
+DataFrame’leri farklı tipteki sütunlara ve satırlara sahip bir SQL tablosu olarak düşünebiliriz. DataFrame’ler veriyi daha kolay işleyebilmemizi sağlar.
 
+DataFrame’lerin genel kullanımı
+```python
+my_dataframe = pd.DataFrame(data,index)
+```
+şeklindedir. Serilerde olduğu gibi DataFrame’lerde farklı türden data parametresi alabilirler. Yukarıdaki kullanımda data parametresi aşağıdakilerden herhangi biri olabilir.
+
+Dictionary’lerden, serilerden veya listelerden oluşan bir dictionary,
+2 boyutlu numpy dizisi,
+Başka bir DataFrame
+```python
+#Data dictionary'lerden oluştuğunda
+dict1 = dict(a=1, b=2, c=3, d=4)
+dict2 = dict(a=5, b=6, c=7, d=8, e=9)
+data1 = dict(first=dict1, second=dict2)
+df1 = pd.DataFrame(data1)
+print(df1)
+Output :
+   first  second
+a    1.0       5
+b    2.0       6
+c    3.0       7
+d    4.0       8
+e    NaN       9
+#Data serilerden oluştuğunda
+s1 = pd.Series([1.1, 2.2, 3.3, 4.4])
+s2 = pd.Series(['a', 'b', 'c', 'd', 'e'])
+data2 = dict(first=s1, second=s2)
+df2 = pd.DataFrame(data2)
+print(df2)
+Output :
+   first second
+0    1.1      a
+1    2.2      b
+2    3.3      c
+3    4.4      d
+4    NaN      e
+#Data başka bir DataFrame'den oluştuğunda
+df3 = pd.DataFrame(df2)
+print(df3)
+```
