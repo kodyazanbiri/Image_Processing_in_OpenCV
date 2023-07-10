@@ -1,5 +1,8 @@
 # OpenCV ile Videoyu İçe Aktarma
 ```python
+import cv2
+import time
+
 cap = cv2.VideoCapture("video.mp4")
     
 if cap.isOpened() == False:
