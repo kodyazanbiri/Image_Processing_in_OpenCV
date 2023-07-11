@@ -24,6 +24,15 @@ writer = cv2.VideoWriter("goruntu_isleme/self_video.mp4",cv2.VideoWriter_fourcc(
 cap.release() #stop capture
 writer.release()
 cv2.destroyAllWindows()
+
+"""
+NOT: cv.VideoWriter(filename, fourcc, fps, frameSize)
+    dosyaadı: Video dosyası girin
+    fourcc: çerçeveleri sıkıştırmak için kullanılan 4 karakterli codec kodu
+    fps: video akışının kare hızı
+    çerçeve boyutu: Çerçevenin yüksekliği ve genişliği
+
+"""
 ```
 - `“VideoCapture()”` fonksiyonu ile görüntüyü yakalama işlemi yapıyoruz. Bu fonksiyonun içine 0 değeri verilirse birincil kameramızdaki
 görüntüyü alacaktır (ikincil bir kamera varsa 1 de yazılabilir). Kameramızın çözünürlük değerini öğrenmek için genişlik ve yükseklik değerlerini
