@@ -1,8 +1,14 @@
 # OpenCV İle Webcam’i Açma Ve Video Kaydetme
+
 ```python
+import cv2
+
 cap = cv2.VideoCapture(0)
+
 width = int(cap.get(cv2.CAP_PROP_FRAME_WIDTH))
 height = int(cap.get(cv2.CAP_PROP_FRAME_HEIGHT))
+
+print(width, height) # 640*480=307200 tane piksel var yani çözünürlük değerimiz.
 
 writer = cv2.VideoWriter("goruntu_isleme/self_video.mp4",cv2.VideoWriter_fourcc(*"DIVX"),30,(width,height))
 
@@ -15,10 +21,11 @@ writer = cv2.VideoWriter("goruntu_isleme/self_video.mp4",cv2.VideoWriter_fourcc(
         if cv2.waitKey(1) & 0xFF == 27:
             break
 
-cap.release()
+cap.release() #stop capture
 writer.release()
+cv2.destroyAllWindows()
 ```
-- Öncelikle `“VideoCapture()”` fonksiyonu ile görüntüyü yakalama işlemi yapıyoruz. Bu fonksiyonun içine 0 değeri verilirse birincil kameramızdaki
+- `“VideoCapture()”` fonksiyonu ile görüntüyü yakalama işlemi yapıyoruz. Bu fonksiyonun içine 0 değeri verilirse birincil kameramızdaki
 görüntüyü alacaktır (ikincil bir kamera varsa 1 de yazılabilir). Kameramızın çözünürlük değerini öğrenmek için genişlik ve yükseklik değerlerini
 alıyoruz. Bu değerler video kaydederken işimize yarayacak.
 
