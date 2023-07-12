@@ -8,14 +8,16 @@ import matplotlib.pyplot as plt
 ```
 ### Resmi İçe Aktarma Ve Kaydetme
 ```python
+
 image = cv2.imread("resim1.jpg",0)
+
 cv2.imshow("Ilk resim",image)
 
-key = cv2.waitKey(0) &0xFF
+key = cv2.waitKey(0) &0xFF   # cv2.waitKey () bir klavye bağlama işlevidir. # İşlev, herhangi bir klavye olayı için belirtilen milisaniye kadar bekler.
 
-if(key==27):
-    cv2.destroyAllWindows()
-elif(key== ord("s")):
+if(key==27):                                                  # wait for ESC key to exit
+    cv2.destroyAllWindows()                                  # olusturdugumuz tüm pencereleri yok eder.
+elif(key== ord("s")):                                       # wait for 's' key to save and exit
      cv2.imwrite("goruntu_isleme/ronaldo_gray.jpg",image)
      cv2.destroyAllWindows()
 ```
