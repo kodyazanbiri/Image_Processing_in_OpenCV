@@ -19,13 +19,14 @@ elif(key== ord("s")):
      cv2.imwrite("goruntu_isleme/ronaldo_gray.jpg",image)
      cv2.destroyAllWindows()
 ```
-- .py uzantılı dosyamız ile yüklemek istediğimiz fotoğrafın aynı klasörde olması gerekir. Eğer aynı klasörde değilse fotoğrafın olduğu adresi tam olarak yazmalıyız.
+- NOT: `.py` uzantılı dosyamız ile yüklemek istediğimiz fotoğrafın aynı klasörde olması gerekir. Eğer aynı klasörde değilse fotoğrafın olduğu adresi tam olarak yazmalıyız.
 
-- OpenCV kütüphanesinde `“imread()”(image read)` isimli bir fonksiyon bulunmakta. Bu fonksiyon içine yazılan uzantıdaki fotoğrafı içe aktarır.
-Fonksiyonun içine “0” değerli bir parametre daha gönderdiğim için resmi siyah beyaz olarak içe aktardı. Bu parametre yerine bir şey yazmazsanız normal renklerinde aktarır.
+-  `“imread()”(image read)` isimli fonksiyon içine yazılan uzantıdaki fotoğrafı içe aktarır. Bu fonksiyon `"resim1.jpg"` isimli bir görüntüyü siyah-beyaz (grayscale) olarak yüklemek ve "Ilk resim" adında bir pencerede görüntülemek için kullanılıyor.
+
+- `cv2.imread("ronaldo.jpg", 0)` komutu, OpenCV kütüphanesini kullanarak "ronaldo.jpg" dosyasını okur. İkinci parametre olan 0, görüntünün siyah-beyaz olarak yüklenmesini sağlar. Eğer 0 yerine 1 veya -1 gibi farklı bir değer verirseniz, renkli olarak yüklenmesini sağlayabilirsiniz.
 
 - `“imshow()”(image show)` fonksiyonuyla ise resmi görselleştirmiş oluyoruz. Bu fonksiyon ilk parametre olarak görselin başlığına yazılacak ismi, ikinci olarak
-ise içe aktarılmış resmin eşitlendiği değişkenin ismini alır.
+ise içe aktarılmış resmin eşitlendiği değişkenin ismini alır. Yani "Ilk resim" adında bir pencere oluşturur ve image adlı siyah-beyaz görüntüyü bu pencerede görüntüler.
 
 - `“waitKey()”` fonksiyonu ise klavyeden bir tuşa basılmasını beklemeyi sağlar. İçerisine (1) değeri verilmişse beklemez(tuşa basılmış sayar), (0) değeri verilir
 ise tuşa basılmasını bekler. Eğer ki bu fonksiyon olmasaydı resmi biz göremeden hemen açıp kapatır ve göremezdik. Bu tuşa basma işleminden dönen değeri bir
