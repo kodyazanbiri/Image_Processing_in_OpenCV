@@ -38,9 +38,12 @@ NOT: cv.VideoWriter(filename, fourcc, fps, frameSize)
 görüntüyü alacaktır (ikincil bir kamera varsa 1 de yazılabilir). Kameramızın çözünürlük değerini öğrenmek için genişlik ve yükseklik değerlerini
 alıyoruz. Bu değerler video kaydederken işimize yarayacak.
 
+- `cap.get(cv2.CAP_PROP_FRAME_WIDTH)` ve `cap.get(cv2.CAP_PROP_FRAME_HEIGHT)` komutları, kameranın çerçeve (frame) genişliğini ve yüksekliğini alır. Bu değerler, kameranın desteklediği maksimum çözünürlüğü temsil eder.
+
 - `“VideoWriter()”` fonksiyonu frameleri bir araya getirerek video oluşmasını sağlar. Bu fonksiyonun parametreleri; videoyu kaydediceği adres,
 sıkıştırma algoritması (four_cc çerçeveleri sıkıştırmak için kullanılan 4 karakterli codec kodu), fps(frame per second) değeri ve (genişlik,yükseklik) dir.
-Bir VideoWriter değişkeni oluşturuyoruz.
+`"goruntu_isleme/self_video.mp4"` adında bir video dosyası oluşturup ve bu dosyaya çerçeveleri kaydediyoruz. `cv2.VideoWriter_fourcc(*"DIVX")`: Video sıkıştırma codec'ini belirtir. `"DIVX"` codec'ini kullanarak sıkıştırma yapar. `VideoWriter_fourcc` fonksiyonu, codec'leri dört karakterli bir biçimde temsil eder.
+`30: FPS` (çerçeve hızı) değerini belirtir. Bu durumda 30 çerçeve/saniye hızında bir video oluşturulur. `(width, height)`, Çerçeve boyutunu belirtir. Önceden tanımlanan width ve height değerlerini kullanarak çerçeve boyutu ayarlanır.
 
 - Daha sonra webcam den gelen görüntüleri okumaya başlıyoruz. Her bir frame’i hem kullanıcıya gösterirken aynı zamanda da VideoWriter
 değişkenimize `“write”` komutu ile frameleri kaydetmesini sağlıyoruz.
